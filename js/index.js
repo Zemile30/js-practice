@@ -356,3 +356,32 @@
 //     console.log (price * quantity);
 // }   
 // orderPrice ("pen",8);
+
+// Bir funksiya yazın.
+// prompt ilə rəng alın (red, yellow, green).
+
+// red → "Stop"
+
+// yellow → "Ready"
+
+// green → "Go"
+
+// əks halda → "Unknown color"
+
+// const colorlight = (red, yellow, green) => {
+//     const color = prompt ("include color:");
+//     switch (color) {
+//         case "red":
+//             console.log ("Stop");
+//             break;
+//         case "yellow":
+//             console.log ("Ready");
+//             break;
+//         case "green":
+//             console.log ("Go");
+//             break;
+//         default:
+//             console.log ("Unknown color");
+//     }
+// }
+// colorlight ();
