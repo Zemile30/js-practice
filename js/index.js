@@ -410,3 +410,65 @@
 // }
 
 // triangleType();
+
+
+// Bir funksiya yazın.
+// prompt ilə menyu nömrəsi alın.
+
+// 1 → "Burger"
+
+// 2 → "Pizza"
+
+// 3 → "Pasta"
+
+// 4 → "Salad"
+
+// Əks halda → "Menu not found"
+
+// const menuNumber = () => {
+//     const menu = Number (prompt ("Menu nomresini daxil et:"));
+//     switch (menu) {
+//         case 1:
+//             console.log ("Burger");
+//             break;
+//         case 2:
+//             console.log ("Pizza");
+//             break;
+//         case 3:
+//             console.log ("Pasta");
+//             break;
+//         case 4:
+//             console.log ("Salad");
+//             break;
+//         default:
+//             console.log ("Menu not found");
+//     }
+// }
+// menuNumber ();
+
+// Bir funksiya yazın.
+// prompt ilə ödəniş üsulu alın (cash, card, online).
+
+// cash → "Cash payment"
+
+// card → "Card payment"
+
+// online → "Online payment"
+
+// const paymentMethod = () => {
+//     const payment = prompt ("odenis usulunu daxil edin:");
+//     switch (payment) {
+//         case "cash":
+//             console.log ("Cash payment");
+//             break;
+//         case "card":
+//             console.log ("Card payment");
+//             break;
+//         case "online":
+//             console.log ("Online payment");
+//             break;
+//         default:
+//             console.log ("Payment is not available")
+//     }
+// }
+// paymentMethod ();
