@@ -385,3 +385,28 @@
 //     }
 // }
 // colorlight ();
+
+// Bir funksiya yazın.
+// prompt ilə 3 tərəf alın.
+
+// Bütün tərəflər bərabərdirsə → "Equilateral"
+
+// İki tərəf bərabərdirsə → "Isosceles"
+
+// Hamısı fərqlidirsə → "Scalene"
+
+// function triangleType() {
+//     let a = Number(prompt("1-ci tərəfi daxil et:"));
+//     let b = Number(prompt("2-ci tərəfi daxil et:"));
+//     let c = Number(prompt("3-cü tərəfi daxil et:"));
+
+//     if (a === b && b === c) {
+//         console.log("Equilateral");
+//     } else if (a === b || a === c || b === c) {
+//         console.log("Isosceles");
+//     } else {
+//         console.log("Scalene");
+//     }
+// }
+
+// triangleType();
