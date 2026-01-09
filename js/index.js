@@ -472,3 +472,67 @@
 //     }
 // }
 // paymentMethod ();
+
+// switch/case ilə funksiya yazın ki, rəng adını qəbul edib onun HEX 
+// kodunu qaytarsın:
+// - 'qırmızı': '#FF0000'
+// - 'yaşıl': '#00FF00'
+// - 'mavi': '#0000FF'
+// - digərləri: 'Naməlum rəng'
+
+// const color = prompt("rengi daxil edin:");
+// switch (color) {
+//     case "qirmizi":
+//         console.log ("#FF0000");
+//         break;
+//     case "yasil":
+//         console.log ("#00FF00");
+//         break;
+//     case "mavi":
+//         console.log ("#0000FF");
+//         break;
+//     default:
+//         console.log ("Unknown color");
+// }
+
+// if/else if/else ilə funksiya yazın ki, alış-veriş məbləğinə 
+// görə endirim hesablasın:
+// - 100 AZN-dən az: endirim yoxdur
+// - 100-500 AZN: 5% endirim
+// - 500-1000 AZN: 10% endirim
+// - 1000 AZN-dən çox: 15% endirim
+
+
+// const saleShopping = (amount) => {
+//     if (amount < 100) {
+//         console.log ("not sale");
+//     }else if ((amount >= 100) && (amount < 500)) {
+//         console.log ("sale 5%");
+//     }else if ((amount >= 500) && (amount < 1000)) {
+//         console.log ("sale 10%");
+//     }else {
+//         console.log ("sale 15%");
+//     }
+// }
+// saleShopping();
+
+// if/else ilə ES6 arrow funksiyası yazın ki, parolu yoxlasın:
+// - Ən azı 8 simvol
+// - Ən azı bir böyük hərf
+// - Ən azı bir rəqəm
+// - Şifrə "12345678" ola bilməz
+
+// const checkPassword = (password) => {
+//   if (password.length < 8) {
+//     console.log("Şifrə ən azi 8 simvol olmalidir");
+//   } else if (!/[A-Z]/.test(password)) {
+//     console.log("Şifrədə ən azi bir böyük hərf olmalidir");
+//   } else if (!/[0-9]/.test(password)) {
+//     console.log("Şifrədə ən azi bir rəqəm olmalidir");
+//   } else if (password === "12345678") {
+//     console.log("Bu şifrə istifadə oluna bilməz");
+//   } else {
+//     console.log("Şifrə uğurla qəbul edildi");
+//   }
+// }
+// checkPassword();
