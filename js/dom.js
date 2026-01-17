@@ -159,3 +159,123 @@
 //         alert(this.innerText);
 //     });
 // });
+
+// Tapşırıq 1:
+// Bir düymə yarat. Klik edəndə alert ilə “Salam Dünya” yazısı çıxsın.
+
+// let btn = document.querySelector("button");
+
+// function Hello() {
+//     alert ("Salam Dunya");
+// }
+// btn.addEventListener("click", Hello);
+
+// Tapşırıq 2:
+// Bir <p> elementi olsun. Düyməyə klik edəndə həmin mətn “Klik edildi” olsun.
+
+// let btn = document.querySelector("button");
+// let p = document.querySelector("p");
+
+// function Klikle() {
+//     p.innerHTML = "Klik edildi";
+// }
+// btn.addEventListener("click", Klikle);
+
+// Tapşırıq 3:
+// Bir <div> yaradın. Klik edəndə arxa fon rəngi qırmızı olsun.
+
+// const btn = document.querySelector("button");
+// const result = document.querySelector("#result");
+
+// function Color() {
+//     result.style.backgroundColor = "red";
+// }
+// btn.addEventListener("click", Color);
+
+
+// Tapşırıq 4:
+// Bir düymə klik ediləndə <h1> elementinin rəngi mavi olsun.
+
+// let btn = document.querySelector("button");
+// let h1 = document.querySelector("h1");
+
+// function Blue() {
+//     h1.style.color = "blue";
+// }
+// btn.addEventListener("click", Blue);
+
+
+// Tapşırıq 5:
+// Bir düymə klik ediləndə səhifədəki bir <span> daxilinə cari tarix yazılsın.
+
+// function showDate() {
+//     span.textContent = new Date().toLocaleDateString("az-AZ");
+//   }
+// let btn = document.querySelector("button");
+// let span = document.querySelector("#date");
+// btn.addEventListener("click", showDate);
+
+// Tapşırıq 6:
+// Bir şəkil olsun. Düyməyə klik edəndə şəkil gizlənsin (display: none).
+
+// let btn = document.querySelector("button");
+// let image = document.querySelector("img");
+
+// function Image() {
+//     if (image.style.display === "none") {
+//         image.style.display = "block";
+//     }else {
+//         image.style.display = "none";
+//     }
+// }
+// btn.addEventListener("click", Image);
+
+// Tapşırıq 7:
+// Bir düymə klik ediləndə gizli olan mətn görünsün.
+
+// let btn = document.querySelector("button");
+// let text = document.querySelector("#text");
+
+// function showText() {
+//     if (text.style.display === "none") {
+//         text.style.display = "block";
+//     }else {
+//         text.style.display = "none";
+//     }
+// }
+// btn.addEventListener("click", showText);
+
+// Tapşırıq 8:
+// Bir düymə klik ediləndə <input> daxilində yazılan dəyər alert ilə göstərilsin.
+
+// let btn = document.querySelector("button");
+// let input = document.querySelector("#inputText")
+
+// function showValue() {
+//     const value = document.getElementById("inputText").value;
+//     alert(value);
+// }
+// btn.addEventListener("click", showValue);
+
+// Tapşırıq 9:
+// Bir düymə klik ediləndə səhifədəki bir <p> elementinin ölçüsü böyüsün.
+
+// let btn = document.querySelector("button");
+// let text = document.querySelector("#text");
+
+// function increaseSize() {
+//     const p = document.getElementById("text");
+//     p.style.fontSize = "30px";
+// }
+// btn.addEventListener("click", increaseSize);
+
+// Tapşırıq 10:
+// Bir düymə klik ediləndə konsola “Button clicked” yazılsın.
+
+// let btn = document.querySelector("button");
+
+// function logClick() {
+//     console.log("Button clicked");
+// }
+// btn.addEventListener("click", logClick);
+
