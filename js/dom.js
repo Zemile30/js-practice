@@ -279,3 +279,24 @@
 // }
 // btn.addEventListener("click", logClick);
 
+// let nav = document.querySelector("nav");
+
+// function openNav() {
+//   nav.style.width = "250px";
+// }
+
+// function closeNav() {
+//   nav.style.width = "0";
+// }
+// let btn = document.querySelector("button");
+// btn.addEventListener("click", closeNav);
+
+// let test = document.querySelector("#test");
+// function openClose() {
+//     if (nav.style.width === "250px") {
+//         nav.style.width = "0";
+//     }else {
+//         nav.style.width = "250px";
+//     }
+// }
+// test.addEventListener("click",openClose);
