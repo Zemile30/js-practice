@@ -301,3 +301,133 @@
 // }
 // test.addEventListener("click",openClose);
 
+// Mətn dəyişdirən düymə
+// Şərtlər:
+
+// Səhifədə:
+
+// bir <p> elementi olsun (məsələn: "Salam Dünya")
+
+// bir <button> olsun ("Dəyiş")
+
+// Button klik olunanda:
+
+// <p>-nin mətni "Mətn dəyişdi" olsun
+
+// <p>-nin rəngi mavi olsun
+
+// Button ikinci dəfə klik olunanda:
+
+// mətn yenidən "Salam Dünya" olsun
+
+// rəng qara olsun
+
+// Heç bir framework istifadə etmə (yalnız pure JS)
+
+// const text = document.getElementById("text");
+// const button = document.getElementById("btn");
+
+// let isChanged = false;
+
+// function HelloWorld() {
+//     if (!isChanged) {
+//         text.innerHTML = "Metn deyisdi";
+//         text.style.color = "blue";
+//         isChanged = true;
+//     }else {
+//         text.innerHTML = "Salam Dunya";
+//         text.style.color = "black";
+//         isChanged = false;
+//     }
+
+// }
+// button.addEventListener("click",HelloWorld);
+
+
+
+// 1 ədəd div (qutu)
+// 1 ədəd button
+
+// Funksiya:
+// 1️⃣ Səhifə açılanda qutu qırmızı olsun
+// 2️⃣ Button-a click ediləndə:
+// qutu yaşıl olsun
+// 3️⃣ Button-a ikinci dəfə click ediləndə:
+// qutu yenidən qırmızı olsun
+// 4️⃣ Sonra bu şəkildə davam etsin (toggle)
+
+// const button = document.getElementById("btn");
+// const box = document.getElementById("box");
+
+// let isColor = false;
+
+// button.addEventListener("click", function() {
+//     if (!isColor) {
+//         box.style.backgroundColor = "green";
+//         isColor = true;
+//     }else {
+//         box.style.backgroundColor = "red";
+//         isColor = false;
+//     }
+// })
+
+// Səhifədə:
+// 1 ədəd input (məsələn: "Task yaz")
+// 1 ədəd button (məsələn: "Əlavə et")
+// 1 ədəd ul elementi (task-ları göstərmək üçün)
+
+// Funksiya:
+// 1️⃣ İstifadəçi input-a yazır
+// 2️⃣ Button click ediləndə:
+// input-dakı dəyər ul-də <li> olaraq əlavə olunur
+// input boşalanaq
+// 3️⃣ Hər <li> yanında “Sil” button olsun
+// Sil button click olunanda həmin <li> silinsin
+
+// const input = document.getElementById("taskInput");
+// const addBtn = document.getElementById("addBtn");
+// const list = document.getElementById("taskList");
+
+// addBtn.addEventListener("click", function() {
+//     const taskText = input.value.trim();
+
+//     const li = document.createElement("li");
+//     li.innerHTML = taskText;
+
+//     const deleteBtn = document.createElement("button");
+//     deleteBtn.innerHTML = "Sil";
+//     deleteBtn.style.marginLeft = "10px";
+
+//     deleteBtn.addEventListener("click", function() {
+//         li.remove();
+//     })
+
+//     li.appendChild(deleteBtn);
+//     list.appendChild(li);
+
+//     input.value = "";
+// })
+
+// const menuBtn = document.getElementById("menuBtn");
+// const navMenu = document.getElementById("navMenu");
+
+// menuBtn.addEventListener("click", function () {
+
+//     if (navMenu.style.display === "block") {
+//         navMenu.style.display = "none";
+//         return;
+//     }
+
+//     navMenu.style.display = "block";
+
+//     if (navMenu.innerHTML === "") {
+//         const pages = ["Home", "About", "Services", "Contact"];
+
+//         pages.forEach(page => {
+//             const link = document.createElement("a");
+//             link.textContent = page;
+//             link.href = "#";
+//             navMenu.appendChild(link);
+//         });
+//     }
+// });
