@@ -344,3 +344,119 @@
 //     text.textContent = "Son dəfə bu səhifəyə: " + formatDate(lastDate) + " tarixində daxil olmusunuz";
 // }
 // localStorage.setItem("lastVisitTime", now.toString());
+
+
+// Filter System
+
+// Məhsul siyahısı göstərən səhifə qur.
+
+// Tələblər:
+// 	•	Məhsullar JS array-də saxlanmalıdır
+// 	•	Hər məhsulda: name, price, category olmalıdır
+// 	•	Aşağıdakı filterlər birlikdə işləməlidir:
+// 	•	search input (ada görə axtarış)
+// 	•	category checkbox filter (çox seçimli)
+// 	•	max price input
+// 	•	sort (ucuzdan bahaya / bahadan ucuza)
+// 	•	Filterlər eyni anda tətbiq olunmalıdır
+// 	•	Hər dəyişiklikdə DOM yenidən render olunmalıdır
+// 	•	Seçilmiş filter ayarları localStorage-da saxlanmalıdır
+// 	•	Refresh olanda filterlər bərpa olunmalıdır
+
+// const products = [
+//     { name: "iPhone 14", price: 1200, category: "phone" },
+//     { name: "Samsung", price: 1000, category: "phone" },
+//     { name: "MacBook", price: 2500, category: "laptop" },
+//     { name: "Dell", price: 1800, category: "laptop" },
+//     { name: "AirPods", price: 200, category: "accessory" }
+// ];
+
+// const productList = document.getElementById("productList");
+// const searchInput = document.getElementById("search");
+// const maxPriceInput = document.getElementById("maxPrice");
+// const sortSelect = document.getElementById("sort");
+// const categoryCheckboxes = document.querySelectorAll("input[type='checkbox']");
+
+// let filters = {
+//     search: "",
+//     maxPrice: "",
+//     categories: [],
+//     sort: ""
+// };
+
+// function saveFilters() {
+//     filters.search = searchInput.value;
+//     filters.maxPrice = maxPriceInput.value;
+//     filters.sort = sortSelect.value;
+
+//     filters.categories = Array.from(categoryCheckboxes)
+//         .filter(cb => cb.checked)
+//         .map(cb => cb.value);
+
+//     localStorage.setItem("filters", JSON.stringify(filters));
+// }
+
+// function loadFilters() {
+//     const saved = localStorage.getItem("filters");
+//     if (!saved) return;
+
+//     filters = JSON.parse(saved);
+
+//     searchInput.value = filters.search;
+//     maxPriceInput.value = filters.maxPrice;
+//     sortSelect.value = filters.sort;
+
+//     categoryCheckboxes.forEach(cb => {
+//         cb.checked = filters.categories.includes(cb.value);
+//     });
+// }
+
+// function filterData() {
+//     saveFilters();
+
+//     const query = filters.search.toLowerCase();
+//     const maxPrice = filters.maxPrice
+//         ? Number(filters.maxPrice)
+//         : Infinity;
+
+//     let filteredProducts = products.filter(item => {
+//         const matchName = item.name.toLowerCase().includes(query);
+//         const matchPrice = item.price <= maxPrice;
+//         const matchCategory =
+//             filters.categories.length === 0 ||
+//             filters.categories.includes(item.category);
+
+//         return matchName && matchPrice && matchCategory;
+//     });
+
+//     if (filters.sort === "asc") {
+//         filteredProducts.sort((a, b) => a.price - b.price);
+//     } else if (filters.sort === "desc") {
+//         filteredProducts.sort((a, b) => b.price - a.price);
+//     }
+
+//     renderProducts(filteredProducts);
+// }
+
+// function renderProducts(list) {
+//     productList.innerHTML = list.length
+//         ? list.map(p => `
+//             <div>
+//                 <strong>${p.name}</strong> - ${p.price}$ (${p.category})
+//             </div>
+//         `).join("")
+//         : "<p>Məhsul tapilmadi</p>";
+// }
+
+// searchInput.addEventListener("input", filterData);
+// maxPriceInput.addEventListener("input", filterData);
+// sortSelect.addEventListener("change", filterData);
+
+// categoryCheckboxes.forEach(cb => {
+//     cb.addEventListener("change", filterData);
+// });
+
+// loadFilters();
+
+
+

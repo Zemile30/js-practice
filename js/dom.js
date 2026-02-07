@@ -307,21 +307,13 @@
 // Səhifədə:
 
 // bir <p> elementi olsun (məsələn: "Salam Dünya")
-
 // bir <button> olsun ("Dəyiş")
-
 // Button klik olunanda:
-
 // <p>-nin mətni "Mətn dəyişdi" olsun
-
 // <p>-nin rəngi mavi olsun
-
 // Button ikinci dəfə klik olunanda:
-
 // mətn yenidən "Salam Dünya" olsun
-
 // rəng qara olsun
-
 // Heç bir framework istifadə etmə (yalnız pure JS)
 
 // const text = document.getElementById("text");
@@ -431,3 +423,126 @@
 //         });
 //     }
 // });
+
+// 1) Dropdown menyu (Click outside + ESC)
+// “Profil” düyməsinə klikləyəndə açılan dropdown menyu
+
+// Tələblər:
+// - button → klikdə dropdown aç/bagla.
+// - Dropdown açıq olanda:
+//   - səhifənin boş yerinə klik → dropdown bağlansın (click outside).
+//   - Esc basanda → dropdown bağlansın.
+// - Dropdown açıq olanda düyməyə active class ver, bağlananda götür.
+
+// ------------------------------------------------------------
+
+// const btn = document.getElementById("btn");
+// const menu = document.getElementById("menu");
+
+// btn.onclick = (e) => {
+//     e.stopPropagation();
+//     menu.classList.toggle("show");
+//     btn.classList.toggle("active");
+// }
+
+// document.onclick = () => {
+//     menu.classList.remove("show");
+//     btn.classList.remove("active");
+// }
+
+// document.onkeydown = (e) => {
+//     if (e.key === "Escape") {
+//         menu.classList.remove("show");
+//         btn.classList.remove("active");
+//     }
+// }
+
+// 2) Sadə form validasiyası + “Draft” yadda saxla
+// 2 inputlu form: Ad və Email.
+
+// Tələblər:
+// - “Submit” klikdə:
+//   - Ad boşdursa → inputun altına error text çıxar, inputa error class ver.
+//   - Email “@” yoxdursa → eyni şəkildə error göstər.
+// - İstifadəçi yazmağa başlayanda error avtomatik silinsin.
+// - İstifadəçi yazdıqca (input event):
+//   - dəyərləri sessionStorage-a yaz (draft).
+// - Səhifə refresh olanda draft varsa → inputlar dolu gəlsin.
+
+// ------------------------------------------------------------
+
+// const form = document.getElementById("form");
+// const nameInput = document.getElementById("name");
+// const emailInput = document.getElementById("email");
+
+// nameInput.value = sessionStorage.getItem("name") || "";
+// emailInput.value = sessionStorage.getItem("email") || "";
+
+// form.onsubmit = (e) => {
+//     e.preventDefault();
+
+//     let ok = true;
+
+//     if (nameInput.value === "") {
+//         nameInput.classList.add("error");
+//         nameInput.nextElementSibling.textContent = "Ad bos ola bilmez";
+//         ok = false;
+//     }
+
+//     if (!emailInput.value.includes("@")) {
+//         emailInput.classList.add("error");
+//         emailInput.nextElementSibling.textContent = "Email duzgun deyil";
+//         ok = false;
+//     }
+
+//     if (ok) {
+//         alert ("Gonderildi");
+//         sessionStorage.clear();
+//         form.reset();
+//     }
+// }
+
+// [nameInput, emailInput].forEach(input => {
+//     input.oninput = () => {
+//         input.classList.remove("error");
+//         input.nextElementSibling.textContent = "";
+//         sessionStorage.setItem(input.id, input.value);
+//     }
+// })
+
+// 3) “Copy” düyməsi (Clipboard + status mesajı)
+// Ekranda bir “promo code” text və yanında “Copy” button olmalı
+
+// Tələblər:
+// - “Copy” klikdə:
+//   - kodu clipboard-a kopyala
+//   - düymənin yanında “Copied!” yazısı çıxsın (2 saniyə sonra gizlənsin).
+// - Əgər clipboard işləməsə (catch) → “Copy failed” göstər.
+
+// const copyBtn = document.getElementById("copyBtn");
+// const promo = document.getElementById("promo");
+// const text = document.getElementById("text");
+
+// copyBtn.onclick = () => {
+
+//     navigator.clipboard.writeText(promo.textContent)
+//     .then (() => {
+//         text.textContent = "Copied";
+//         text.style.color = "green";
+//         text.classList.add("show");
+
+//         setTimeout (() => {
+//             text.classList.remove("show")
+//         } ,2000);
+//     })
+
+//     .catch (() => {
+//         text.textContent = "Copy failed";
+//         text.style.color = "red";
+//         text.classList.add("show");
+
+//         setTimeout (() => {
+//             text.classList.remove("show")
+//         }, 2000);
+//     })
+// }

@@ -202,3 +202,38 @@ body {
     text-decoration: none;
     color: #333;
 }
+
+.menu {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.menu.show {
+    display: block;
+}
+
+#btn.active {
+    background: black;
+    color: white;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+#text {
+    margin-left: 10px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+#text.show {
+    opacity: 1;
+}
